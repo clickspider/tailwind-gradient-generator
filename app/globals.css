@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Pink-based primary palette */
+    --primary: 339 90% 51%; /* #FF2D6C */
+    --primary-lighter: 339 90% 61%;
+    --primary-darker: 339 90% 41%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary teal-based palette */
+    --secondary: 180 100% 50%; /* #00FFFF */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Neutral grays */
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 339 90% 97%;
+    --accent-foreground: 339 90% 20%;
+
+    /* Status colors */
+    --success: 142 72% 29%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* UI elements */
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 339 90% 51%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Pink-based primary palette - Dark Mode */
+    --primary: 339 90% 51%; /* #FF2D6C */
+    --primary-lighter: 339 90% 61%;
+    --primary-darker: 339 90% 41%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary teal-based palette - Dark Mode */
+    --secondary: 180 100% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Neutral grays - Dark Mode */
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 339 90% 20%;
+    --accent-foreground: 339 90% 96%;
+
+    /* Status colors - Dark Mode */
+    --success: 142 72% 35%;
+    --warning: 38 92% 50%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* UI elements - Dark Mode */
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 339 90% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted/50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full hover:bg-primary/50 transition-colors;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
